@@ -1,0 +1,143 @@
+$text__serif--sizes: (
+  xs: (
+    font-size: 12 12,
+    line-height: 18 28,
+    top-crop: 4 9,
+    bottom-crop: 4 10,
+  ),
+  s: (
+    font-size: 18 18,
+    line-height: 28 32,
+    top-crop: 7 9,
+    bottom-crop: 7 10,
+  ),
+  m: (
+    font-size: 22 24,
+    line-height: 32 40,
+    top-crop: 9 11,
+    bottom-crop: 7 12,
+  ),
+  l: (
+    font-size: 28 32,
+    line-height: 40 48,
+    top-crop: 9 13,
+    bottom-crop: 10 12,
+  ),
+  xl: (
+    font-size: 32 40,
+    line-height: 48 64,
+    top-crop: 13 17,
+    bottom-crop: 12 18,
+  ),
+);
+
+%text__serif {
+  color: $colors__black-sbt;
+
+  transform: none;
+
+  text: {
+    align: left;
+    // Prevent adjustments of font size after orientation changes in iOS.
+    size-adjust: 100%;
+  }
+  font: {
+    family: $font-family__inspirational;
+    style: normal;
+    weight: 400;
+  }
+  
+  b,
+  strong {
+    @extend %text__serif--bold;
+  }
+  
+  small {
+    font-size: 1rem;
+  }
+  
+  em {
+    @extend %text__serif--italic;
+  }
+}
+
+%text__serif--bold {
+  font-weight: 700;
+}
+
+%text__serif--italic {
+  font-style: italic;
+}
+
+@each $size, $font-styles in $text__serif--sizes {
+  $fontSize: map-get($font-styles, font-size);
+  $lineHeight: map-get($font-styles, line-height);
+  $topCrop: map-get($font-styles, top-crop);
+  $bottomCrop: map-get($font-styles, bottom-crop);
+
+  $debugCrop: false;
+  $cropHeight: 4;
+
+  %text__serif--#{$size} {
+    font-size: pixelToRem(nth($fontSize, 1));
+    line-height: pixelToRem(nth($lineHeight, 1));
+
+    /* stylelint-disable-next-line order/order */
+    @include mediaScreen($size: s) {
+      font-size: pixelToRem(nth($fontSize, 2));
+      line-height: pixelToRem(nth($lineHeight, 2));
+    }
+  }
+
+  %text__serif--#{$size}-with-crop {
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      height: pixelToRem($cropHeight);
+      opacity: 0.3;
+  
+      @if ($debugCrop == false) {
+        background: none !important;
+        visibility: hidden;
+        width: 0;
+      }
+    };
+      
+    &::before {
+      background: #f00;
+      margin-bottom: calc(-#{pixelToRem($cropHeight)} - #{pixelToRem(nth($topCrop, 1))});
+    }
+    
+    &::after {
+      background: #00f;
+      margin-top: calc(-#{pixelToRem($cropHeight)} - #{pixelToRem(nth($bottomCrop, 1))});
+    }
+
+    /* stylelint-disable-next-line order/order */
+    @include mediaScreen($size: s) {&::before {
+        margin-bottom: calc(-#{pixelToRem($cropHeight)} - #{pixelToRem(nth($topCrop, 2))});
+      }
+
+      &::after {
+        margin-top: calc(#{pixelToRem($cropHeight)} - #{pixelToRem(nth($bottomCrop, 2))});
+      }
+    }
+  }
+}
+
+@mixin text__serif($size, $weight: 'normal', $style: 'normal', $crop: false) {
+  @extend %text__serif;
+  @extend %text__serif--#{$size};
+
+  @if ($weight == 'bold') {
+    @extend %text__serif--bold;
+  }
+  @if ($style == 'italic') {
+    @extend %text__serif--italic;
+  }
+
+  @if ($crop) {
+    @extend %text__sans-serif--#{$size}-with-crop;
+  }
+}

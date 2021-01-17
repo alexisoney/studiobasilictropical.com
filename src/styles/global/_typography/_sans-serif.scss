@@ -1,0 +1,150 @@
+$text__sans-serif--sizes: (
+  xs: (
+    font-size: 14 14,
+    line-height: 20 20,
+    top-crop: 5 5,
+    bottom-crop: 5 13,
+  ),
+  s: (
+    font-size: 18 18,
+    line-height: 30 32,
+    top-crop: 8 9,
+    bottom-crop: 8 18,
+  ),
+  m: (
+    font-size: 22 24,
+    line-height: 34 40,
+    top-crop: 8 11,
+    bottom-crop: 9 20,
+  ),
+  l: (
+    font-size: 28 32,
+    line-height: 38 48,
+    top-crop: 7 12,
+    bottom-crop: 9 20,
+  ),
+  xl: (
+    font-size: 32 40,
+    line-height: 44 64,
+    top-crop: 9 17,
+    bottom-crop: 10 26,
+  ),
+);
+
+%text__sans-serif {
+  color: $colors__black-sbt;
+
+  text: {
+    align: left;
+    // Prevent adjustments of font size after orientation changes in iOS.
+    size-adjust: 100%;
+    transform: none;
+  }
+  
+  font: {
+    family: $font-family__functional;
+    style: normal;
+    weight: 300;
+  }
+
+  b,
+  strong {
+    @extend %text__sans-serif--bold;
+  }
+
+  small {
+    font-size: 1em;
+  }
+
+  em {
+    @extend %text__sans-serif--light;
+  }
+}
+
+%text__sans-serif--bold {
+  font: {
+    style: normal;
+    weight: 600;
+  }
+}
+
+%text__sans-serif--light {
+  font: {
+    style: normal;
+    weight: 200;
+  }
+}
+
+@each $size, $font-styles in $text__sans-serif--sizes {
+  $fontSize: map-get($font-styles, font-size);
+  $lineHeight: map-get($font-styles, line-height);
+  $topCrop: map-get($font-styles, top-crop);
+  $bottomCrop: map-get($font-styles, bottom-crop);
+
+  $debugCrop: false;
+  $cropHeight: 4;
+
+  %text__sans-serif--#{$size} {
+    font-size: pixelToRem(nth($fontSize, 1));
+    line-height: pixelToRem(nth($lineHeight, 1));
+
+    /* stylelint-disable-next-line order/order */
+    @include mediaScreen($size: s) {
+      font-size: pixelToRem(nth($fontSize, 2));
+      line-height: pixelToRem(nth($lineHeight, 2));
+    }
+  }
+
+  %text__sans-serif--#{$size}-with-crop {
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      height: pixelToRem($cropHeight);
+      opacity: 0.3;
+
+      @if ($debugCrop == false) {
+        background: none !important;
+        visibility: hidden;
+        width: 0;
+      }
+    };
+    
+    &::before {
+      background: #f00;
+      margin-bottom: calc(-#{pixelToRem($cropHeight)} - #{pixelToRem(nth($topCrop, 1))});
+    }
+    
+    &::after {
+      background: #00f;
+      margin-top: calc(-#{pixelToRem($cropHeight)} - #{pixelToRem(nth($bottomCrop, 1))});
+    }
+
+    /* stylelint-disable-next-line order/order */
+    @include mediaScreen($size: s) {&::before {
+        margin-bottom: calc(-#{pixelToRem($cropHeight)} - #{pixelToRem(nth($topCrop, 2))});
+      }
+
+      &::after {
+        margin-top: calc(#{pixelToRem($cropHeight)} - #{pixelToRem(nth($bottomCrop, 2))});
+      }
+    }
+  }
+}
+
+
+
+@mixin text__sans-serif($size, $weight: 'normal', $crop: false) {
+  @extend %text__sans-serif;
+  @extend %text__sans-serif--#{$size};
+
+  @if ($weight == 'bold') {
+    @extend %text__sans-serif--bold;
+  } @else if ($weight == 'light') {
+    @extend %text__sans-serif--light;
+  }
+
+  @if ($crop) {
+    @extend %text__sans-serif--#{$size}-with-crop;
+  }
+}

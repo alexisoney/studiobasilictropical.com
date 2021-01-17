@@ -1,0 +1,38 @@
+// https://gs.statcounter.com/screen-resolution-stats/all/france
+$screen--3xs: 360;
+$screen--2xs: 412;
+$screen--xs: 600;
+$screen--s: 768;
+$screen--m: 1024;
+$screen--l: 1440;
+$screen--xl: 1600;
+$screen--2xl: 2560;
+
+@mixin mediaScreen($size) {
+  $list: (
+    '3xs' $screen--3xs,
+    '2xs' $screen--2xs,
+    'xs' $screen--xs,
+    's' $screen--s,
+    'm' $screen--m,
+    'l' $screen--l,
+    'xl' $screen--xl,
+    '2xl' $screen--2xl
+  );
+  
+  
+  $isValid: false;
+  
+  @each $key, $var in $list {
+    @if $size == $key {
+      @media screen and (min-width: pixelToRem($var)) {
+        @content;
+        $isValid: true;
+      }
+    }
+  }
+
+  @if $isValid == false {
+    @error '#{$size} is not a valid size.';
+  }
+}

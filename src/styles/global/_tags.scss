@@ -1,0 +1,344 @@
+
+%typography--base {
+  @include text__serif($size: 's');
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  // Render the `main` element consistently in IE.
+  display: block;
+}
+
+img,
+picture {
+  border: 0;
+  display: block;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+hr {
+  border: 0;
+  border-bottom: 1px solid $colors__linen;
+  height: 0;
+  margin: getSpacing($scale: 'macro', $size: 's') auto;
+  // Show the overflow in Edge and IE.
+  overflow: visible;
+  width: 100%;
+}
+
+h1 { 
+  @include text__serif($size: 'xl', $weight: 'bold');
+  margin: 0 0 getSpacing($scale: 'macro', $size: 's');
+}
+
+h2 { 
+  @include text__sans-serif($size: 'l', $weight: 'bold');
+  margin: getSpacing($scale: 'macro', $size: 's') 0;
+}
+
+h3 { 
+  @include text__sans-serif($size: 'm', $weight: 'bold');
+  margin: getSpacing($scale: 'macro', $size: 'xs') 0;
+}
+
+h4,
+h5,
+h6 { 
+  @include text__sans-serif($size: 's', $weight: 'bold');
+  margin: getSpacing($scale: 'macro', $size: 'xs') 0;
+}
+
+p {
+  @extend %typography--base;
+  margin: getSpacing($scale: 'macro', $size: 'xs') 0;
+}
+
+
+@keyframes a--animation {
+  from {
+    background-position: 100% 100%;
+    background-size: 100% pixelToRem(4);
+  }
+  
+  35% {
+    background-position: 100% 100%;
+    background-size: 0% pixelToRem(4);
+  }
+
+  36% {
+    background-position: 0% 100%;
+    background-size: 0% pixelToRem(4);
+  }
+
+  100% {
+    background-position: 0% 100%;
+    background-size: 100% pixelToRem(4);
+  }
+}
+
+a {
+  @include text__serif($size: 's', $weight: 'bold');
+  text-decoration: none;
+  
+  background-image: linear-gradient($colors__lemonade-yellow, $colors__lemonade-yellow);
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 100% pixelToRem(4);
+
+  padding: 0 0 pixelToRem(4);
+  
+  &:hover {
+    animation-name: a--animation;
+    animation-duration: 800ms;
+    animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    animation-fill-mode: both;
+  }
+}
+
+pre,
+code,
+kbd,
+samp {
+  @extend %typography--base;
+  background: $colors__black-sbt;
+  color: $colors__white-sbt;
+  font-family: monospace;
+  padding: getSpacing($scale: 'micro', $size: 's');
+  overflow-x: scroll;
+}
+
+blockquote {
+  margin: getSpacing($scale: 'macro', $size: 's') 0;
+  
+  *:first-child {
+    margin-top: 0;
+  }
+  
+  *:last-child {
+    margin-bottom: 0;
+  }
+
+  > p {
+    @include text__serif($size: 'xl', $weight: 'bold', $style: 'italic');
+  }
+
+  > p::before,
+  > p::after {
+    background: none;
+    display: inline;
+    margin: 0;
+    opacity: 1;
+    visibility: visible;
+    width: auto;
+  }
+
+  > p::before {
+    content: '\201C\00A0';
+  }
+  
+  > p::after {
+    content: '\00A0\201D';
+  }
+}
+
+
+
+/* Lists
+   ========================================================================== */
+
+ul,
+ol {
+  @extend %typography--base;
+};
+
+ul {
+  list-style: none;
+}
+
+ul li::before {
+  background: $colors__jungle-green;
+  border-radius: 100%;
+  content: '';
+  display: inline-block;
+  height: pixelToRem(8);
+  margin: 0 getSpacing($scale: 'micro', $size: 'm') 0 getSpacing($scale: 'micro', $size: 's');
+  transform: translateY(-25%);
+  width: pixelToRem(8);
+}
+
+ul,
+ul li,
+ol,
+ol li {
+  list-style-position: inside;
+  padding: 0;
+  text-indent: 0;
+}
+
+li {
+  margin: getSpacing($scale: 'micro', $size: 'm') 0;
+}
+
+ul,
+ol {
+  margin: getSpacing($scale: 'micro', $size: 'l') getSpacing($scale: 'micro', $size: 's');
+}
+
+ol {
+  list-style: decimal;
+}
+
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+  margin: 0;
+  padding-left: getSpacing($scale: 'micro', $size: 'm');
+}
+
+
+
+/* `sub` and `sup`
+   ========================================================================== */
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+
+/* Forms
+   ========================================================================== */
+
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+  @include text__sans-serif($size: 's');
+  appearance: none;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0;
+  overflow: visible;
+  padding: 0;
+  text-align: center;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    background: $colors__black-sbt;
+    color: $colors__white-sbt;
+  }
+
+  &:focus {
+    border-style: none;
+    outline: 2px solid rgb(255, 0, 0);
+    outline-offset: 0;
+    padding: 0;
+  }
+
+  &:active {
+    transform: scale(0.99);
+  }
+}
+
+::-webkit-file-upload-button {
+  /**
+  * 1. Correct the inability to style clickable types in iOS and Safari.
+  * 2. Change font properties to `inherit` in Safari.
+  */
+  appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+input,
+optgroup,
+select,
+textarea {
+  @include text__sans-serif($size: 's');
+  margin: 0;
+}
+
+input {
+  // Show the overflow in Edge.
+  overflow: visible;
+}
+
+fieldset {
+  // Correct the padding in Firefox.
+  padding: 0.35em 0.75em 0.625em;
+}
+
+legend {
+  /**
+  * 1. Correct the text wrapping in Edge and IE.
+  * 2. Correct the color inheritance from `fieldset` elements in IE.
+  * 3. Remove the padding so developers are not caught out when they zero out
+  *    `fieldset` elements in all browsers.
+  */
+
+  box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
+}
+
+progress {
+  // Add the correct vertical alignment in Chrome, Firefox, and Opera.
+  vertical-align: baseline;
+}
+
+[type='number']::-webkit-inner-spin-button,
+[type='number']::-webkit-outer-spin-button {
+  // Correct the cursor style of increment and decrement buttons in Chrome.
+  height: auto;
+}
+
+[type='search'] {
+  /**
+  * 1. Correct the odd appearance in Chrome and Safari.
+  * 2. Correct the outline style in Safari.
+  */
+  appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+
+  &::-webkit-search-decoration {
+    // Remove the inner padding in Chrome and Safari on macOS.
+    appearance: none;
+  }
+}

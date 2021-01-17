@@ -1,0 +1,42 @@
+@function pixelToRem($size) {
+  @return $size / 16 * 1rem;
+}
+
+$units: (
+  'margin': pixelToRem(8),
+  'text': 2px,
+);
+
+@function getUnit($unit) {
+  @return map-get($units, $unit);
+}
+
+$macroSpacings: (
+  'xs': 4,
+  's': 8,
+  'm': 12,
+  'l': 16,
+  'xl': 20
+);
+
+$microSpacings: (
+  'xs': 1,
+  's': 1.5,
+  'm': 2,
+  'l': 2.5,
+  'xl': 3
+);
+
+@function getSpacing($scale, $size) {
+  $micro: map-get($microSpacings, $size);
+  $macro: map-get($macroSpacings, $size);
+  $unit: getUnit('margin');
+  
+  @if ($scale == 'micro') {
+    @return $micro * $unit;
+  } @else if ($scale == 'macro') {
+    @return $macro * $unit;;
+  } @else {
+    @error '#{$scale} is not a valid scale';
+  }
+}

@@ -1,0 +1,40 @@
+$home__width: pixelToRem(600);
+$home__content-padding: getSpacing($scale: 'macro', $size: 'xs');
+$home__header-vertical-spacing: getSpacing($scale: 'macro', $size: 's');
+
+.home {
+  max-width: $home__width;
+  margin: 0 auto;
+  padding: 0 $home__content-padding;
+}
+
+.home__header {
+  position: relative;
+  height: pixelToRem(200);
+}
+
+.home__header-background {
+  background: $colors__deep-green;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+.home__post {
+  margin: getSpacing($scale: 'macro', $size: 'm') 0;
+}
+
+.home__title {
+  margin: getSpacing($scale: 'micro', $size: 'xl') 0;
+}
+
+.home__title-link {
+  @include text__sans-serif($size: 'm');
+  
+  &::before {
+    display: none;
+  }
+}

@@ -1,0 +1,317 @@
+$blog-post__width: pixelToRem(600);
+$blog-post__scale: pixelToRem(100);
+$blog-post__content-padding: getSpacing($scale: 'macro', $size: 'xs');
+$blog-post__space-around-content: calc((100vw - #{$blog-post__width}) / 2);
+$blog-post__header-vertical-spacing: getSpacing($scale: 'macro', $size: 's');
+$blog-post__author-breakpoint: 'xs';
+
+$blog-post: (
+  'when content has no padding': $blog-post__width + getSpacing($scale: 'macro', $size: 's'),
+);
+
+@function getBlogPostMaxWidth($size) {
+  $isValid: false;
+  @each $authorized in (0, 2, 4) {
+    @if $size == $authorized {
+      $isValid: true;
+    }
+  }
+  @if $isValid {
+    @return $blog-post__width + $size * $blog-post__scale;
+  }
+  
+  @error '#{$size} is not a valid size.';
+}
+
+@function getBlogPostAbsolutePosition($size) {
+  $isValid: false;
+  @each $authorized in (2, 4) {
+    @if $size == $authorized {
+      $isValid: true;
+    }
+  }
+  @if $isValid {
+    @return $size * $blog-post__scale;
+  }
+  
+  @error '#{$size} is not a valid size.';
+}
+
+.blog-post {
+  position: relative;
+
+  &::before {
+    background: $colors__deep-green;
+    bottom: pixelToRem(150);
+    content: '';
+    height: pixelToRem(200);
+    left: 0;
+    position: absolute;
+    width: 80%;
+  }
+  
+  &::after {
+    background: $colors__lemonade-yellow;
+    content: '';
+    display: block;
+    height: pixelToRem(200);
+    margin-top: pixelToRem(250);
+    width: 100%;
+  }
+}
+
+.blog-post__header-wrapper {
+  position: relative;
+
+  @include mediaScreen($size: m) {
+    padding-top: $blog-post__header-vertical-spacing;
+  }
+}
+
+.blog-post__header-background {
+  background: $colors__deep-green;
+  height: calc(100% - #{$blog-post__header-vertical-spacing});
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+.blog-post__header {
+  margin: 0 auto;
+  max-width: $blog-post__width;
+  width: 100%;
+}
+
+.blog-post__metadata {
+  padding: 0 $blog-post__content-padding;
+
+  @media screen and (min-width: map-get($blog-post,'when content has no padding')) {
+    padding: 0;
+  }
+}
+
+.blog-post__metadata-date {
+  @include text__sans-serif($size: 'xs', $crop: true, $weight: 'light');
+  color: $colors__white-sbt;
+  display: inline-block;
+  margin: 0;
+  margin-bottom: getSpacing($scale: 'micro', $size: 's');
+}
+
+.blog-post__metadata-reading-time {
+  @include text__sans-serif($size: 'xs', $crop: true, $weight: 'bold');
+  color: $colors__white-sbt;
+  display: inline-block;
+  margin: 0;
+  margin-bottom: getSpacing($scale: 'micro', $size: 's');
+}
+
+.blog-post__title {
+  @include text__serif($size: 'xl', $weight: 'bold');
+  color: $colors__white-sbt;
+  max-width: getBlogPostMaxWidth(2);
+  padding: 0 $blog-post__content-padding;
+  width: 100vw;
+  
+  @media screen and (min-width: map-get($blog-post,'when content has no padding')) {
+    padding: 0;
+    width: calc(#{$blog-post__width} + #{$blog-post__space-around-content});
+  }
+}
+
+.blog-post__thumbnail {
+  $width: 100vw;
+  
+  height: calc(#{$width} * 0.6);
+  max-height: pixelToRem(600);
+  max-width: pixelToRem(1000);
+
+  object-fit: cover;
+  object-position: center;
+  
+  width: $width;
+  
+  @media screen and (min-width: $blog-post__width) {
+    $width: calc(#{$blog-post__width} + #{$blog-post__space-around-content});
+    
+    height: calc(#{$width} * 0.6);
+    width: $width;
+  }
+}
+
+.blog-post__content {
+  margin: getSpacing($scale: 'macro', $size: 'm') auto;
+  max-width: $blog-post__width;
+  padding: 0 $blog-post__content-padding;
+  position: relative;
+  width: 100%;
+
+  @media screen and (min-width: map-get($blog-post,'when content has no padding')) {
+    padding: 0;
+  }
+}
+
+.blog-post__category {
+  @include  text__sans-serif($size: 's', $weight: 'bold', $crop: 'true');
+
+  margin-bottom: getSpacing($scale: 'macro', $size: 's');
+
+  @include mediaScreen($size: 'l') {
+    margin: 0;
+    position: absolute;
+    right: calc(100% + #{getBlogPostAbsolutePosition(2)});
+    top: 0;
+  }
+}
+
+.blog-post__intro {
+  @include  text__sans-serif($size: 'm', $weight: 'bold', $crop: 'true');
+}
+
+.blog-post__table-of-content-wrapper {
+  $width: pixelToRem(300);
+  $margin-left: 1.5 * #{$blog-post__scale};
+  $min-width: calc(#{$blog-post__width} + 2 * #{$margin-left} + 2 * #{$width});
+
+  @media screen and (min-width: $min-width) {
+    position: absolute;
+    left: calc(#{$blog-post__width} + #{$blog-post__space-around-content} - #{$width});
+    
+    height: 100%;
+    width: $width;
+  }
+}
+
+.blog-post__table-of-content {
+  background: $colors__linen;
+  padding: getSpacing($scale: 'macro', $size: 'xs');
+
+  @include mediaScreen($size: 'm') {
+    position: sticky;
+    top: getSpacing($scale: 'macro', $size: 'm');
+  }
+
+  ul {
+    margin: 0;
+  }
+
+  li {
+    @include  text__sans-serif($size: 'xs', $weight: 'bold');
+    margin: getSpacing($scale: 'micro', $size: 's') 0;
+  }
+  
+  li::before {
+    display: none;
+  }
+  
+  a {
+    @include  text__sans-serif($size: 'xs', $weight: 'bold');
+    background-position: 0% 100%;
+    background-size: 0% getSpacing($scale: 'micro', $size: 'xs') / 4;
+  }
+
+  a:hover {
+    background-size: 100% getSpacing($scale: 'micro', $size: 'xs') / 4;
+  }
+}
+
+.blog-post__table-of-content-title {
+  @include text__serif($size: 'xs', $weight: 'bold');
+  color: $colors__deep-green;
+  margin: 0;
+}
+
+.blog-post__break {
+  $spacing: getBlogPostAbsolutePosition($size: 2);
+  
+  position: relative;
+  width: calc(100vw - #{$spacing});
+
+  @media screen and (min-width: calc(#{$blog-post__width} + #{$spacing})) {
+    right: calc((100vw - #{$spacing} - #{$blog-post__width}) / 2);
+  }
+
+  @media screen and (min-width: calc(1000px + #{$spacing})) {
+    right: calc((1000px - #{$blog-post__width}) / 2);
+    width: 1000px;
+  }
+}
+
+.blog-post__image {
+  $max-width: getBlogPostMaxWidth(2);
+
+  margin: getSpacing($scale: 'macro', $size: 'm') 0;
+  margin-left: $blog-post__content-padding * -1;
+
+  width: 100vw;
+  
+  @media screen and (min-width: $blog-post__width) {
+    margin-left: calc((#{$blog-post__space-around-content} + #{$blog-post__content-padding}) * -1);
+  }
+  
+  @media screen and (min-width: map-get($blog-post,'when content has no padding')) {
+    margin-left: calc(#{$blog-post__space-around-content} * -1);
+  }
+
+  @media screen and (min-width: $max-width) {
+    margin-left: $blog-post__scale * -1;
+    width: $max-width;
+  }
+}
+
+.blog-post__author {
+  $max-width: getBlogPostMaxWidth(2);
+  align-items: flex-start;
+
+  background: $colors__linen;
+  display: flex;
+  flex-flow: column nowrap;
+  margin: getSpacing($scale: 'macro', $size: 's') 0;
+  padding: getSpacing($scale: 'macro', $size: 'xs');
+  
+  @include mediaScreen($size: $blog-post__author-breakpoint) {
+    align-items: center;
+    flex-flow: row nowrap;
+  }
+  
+  @media screen and (min-width: map-get($blog-post,'when content has no padding')) {
+    margin: getSpacing($scale: 'macro', $size: 'm') 0;
+    margin-left: calc(#{$blog-post__space-around-content} * -1);
+    padding: getSpacing($scale: 'macro', $size: 's');
+    width: 100vw;
+  }
+  
+  @media screen and (min-width: $max-width) {
+    margin-left: $blog-post__scale * -1;
+    width: $max-width;
+  }
+}
+
+.blog-post__author-image-wrapper {
+  flex: 0 0 0;
+  margin: 0 auto getSpacing($scale: 'macro', $size: 'xs');
+
+  @include mediaScreen($size: $blog-post__author-breakpoint) {
+    margin: 0 getSpacing($scale: 'macro', $size: 's') 0 0;
+  }
+}
+
+.blog-post__author-image {
+  height: pixelToRem(128);
+  margin: 0 auto;
+  object-fit: cover;
+  object-position: center;
+  width: pixelToRem(128);
+}
+
+.blog-post__author-name {
+  @include text__serif($size: 's', $weight: 'bold');
+  margin: 0 0 getSpacing($scale: 'micro', $size: 'xs');
+}
+
+.blog-post__author-description {
+  @include text__sans-serif($size: 's');
+  margin: 0;
+}

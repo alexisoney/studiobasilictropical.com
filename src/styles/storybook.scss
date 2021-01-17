@@ -1,0 +1,138 @@
+@import 'styles';
+
+$storybook_colors--dark-grey: #b9b9b9;
+$storybook_colors--light-grey: #ebebeb;
+
+.storybook__layout {
+  background: $storybook_colors--light-grey;
+  margin: 0 auto;
+  max-width: $screen--l;
+  padding: getSpacing($scale: 'macro', $size: 'xs');
+}
+
+.storybook__layout--no-background {
+  background: none;
+}
+
+.storybook__row {
+  display: flex;
+}
+
+.storybook__row--wrap {
+  flex-wrap: wrap;
+}
+
+.storybook__column {
+  flex: 1 1 auto;
+
+  &:not(:last-child) {
+    margin-right: getSpacing($scale: 'macro', $size: 'xs');
+  }
+}
+
+.storybook__column--fix {
+  flex: {
+    grow: 0;
+    shrink: 0;
+  }
+}
+
+@each $size in (1 2 3 'half', 'one-third', 'two-third') {
+  .storybook__column--#{$size} {
+    @if ($size == 'half') {
+      flex-basis: 50%;
+    } @else if ($size == 'one-third') {
+      flex-basis: 34%;
+    } @else if ($size == 'two-third') {
+      flex-basis: 66%;
+    } @else {
+      flex-basis: #{$size};
+    };
+  }
+}
+
+.storybook__card {
+  background: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+.storybook__card-title {
+  color: $storybook_colors--dark-grey;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1em;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+.storybook__divider {
+  border: 0;
+  border-bottom: 1px solid $storybook_colors--dark-grey;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%; 
+}
+
+%storybook-text {
+  margin: getSpacing($scale: 'micro', $size: 'l') 0;
+}
+
+@each $var in ('xl', 'l', 'm', 's', 'xs') {
+  .storybook-text__serif--#{$var} {
+    @extend %storybook-text;
+    @include text__serif($size: $var, $crop: true);
+  }
+  .storybook-text__sans-serif--#{$var} {
+    @extend %storybook-text;
+    @include text__sans-serif($size: $var, $crop: true);
+  }
+}
+
+.storybook-color__wrapper {
+  margin-bottom: getSpacing($scale: 'micro', $size: 'l');
+
+  &:not(:last-child) {
+    margin-right: getSpacing($scale: 'micro', $size: 'l');
+  }
+}
+
+.storybook-color__title {
+  @include text__serif($size: 'xs');
+  margin: getSpacing($scale: 'micro', $size: 'xs') 0;
+  text-align: center;
+}
+
+%storybook-color {
+  height: 128px;
+  width: 128px;
+
+}
+
+@each $color in ('black-sbt', 'deep-green', 'jungle-green', 'gold-yellow', 'lemonade-yellow', 'white-sbt', 'pale-grey', 'opal-green', 'linen') {
+  .storybook-color__#{$color} {
+    @extend %storybook-color;
+    @if $color == 'black-sbt' {
+      background-color: $colors__black-sbt;
+    } @else if $color == 'deep-green' {
+      background-color: $colors__deep-green;
+    } @else if $color == 'jungle-green' {
+      background-color: $colors__jungle-green;
+    } @else if $color == 'gold-yellow' {
+      background-color: $colors__gold-yellow;
+    } @else if $color == 'lemonade-yellow' {
+      background-color: $colors__lemonade-yellow;
+    } @else if $color == 'white-sbt' {
+      background-color: $colors__white-sbt;
+    } @else if $color == 'pale-grey' {
+      background-color: $colors__pale-grey;
+    } @else if $color == 'opal-green' {
+      background-color: $colors__opal-green;
+    } @else if $color == 'linen' {
+      background-color: $colors__linen;
+    }
+  }
+}

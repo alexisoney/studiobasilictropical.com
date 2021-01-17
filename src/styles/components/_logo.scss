@@ -1,0 +1,87 @@
+.logo {
+  $topCrop: (pixelToRem(11) ,pixelToRem(15));
+  $bottomCrop: (pixelToRem(12), pixelToRem(16));
+
+  $debugCrop: false;
+  $cropHeight: pixelToRem(4);
+
+  color: $colors__white-sbt;
+
+  letter-spacing: pixelToRem(1.5);
+
+  line-height: pixelToRem(17);
+
+  margin: 0 auto;
+  max-width: pixelToRem(600);
+  padding: getSpacing($scale: 'macro', $size: 'xs');
+  text-transform: uppercase;
+  
+  @media screen and (min-width: pixelToRem(600) + getSpacing($scale: 'macro', $size: 's')) {
+    padding-left: 0;
+  }
+
+  
+  @include mediaScreen($size: m) {
+    font-size: pixelToRem(24);
+    left: getSpacing($scale: 'macro', $size: 'xs');
+    letter-spacing: pixelToRem(3);
+    line-height: pixelToRem(34);
+    padding: 0;
+    position: absolute;
+    top: getSpacing($scale: 'macro', $size: 's');
+  }
+
+  @include mediaScreen($size: l) {
+    left: getSpacing($scale: 'macro', $size: 'm');
+  }
+
+  text: {
+    align: left;
+    // Prevent adjustments of font size after orientation changes in iOS.
+    size-adjust: 100%;
+    transform: uppercase;
+  }
+  
+  font: {
+    family: $font-family__functional;
+    size: pixelToRem(12);
+    style: normal;
+    weight: 600;
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    height: 4px;
+    opacity: 0.3;
+
+    /* stylelint-disable-next-line max-nesting-depth */
+    @if ($debugCrop == false) {
+      background: none !important;
+      visibility: hidden;
+      width: 0;
+    }
+  };
+    
+  &::before {
+    background: #f00;
+    margin-bottom: $cropHeight - nth($topCrop, 1);
+  }
+    
+  &::after {
+    background: #00f;
+    margin-top: $cropHeight - nth($bottomCrop, 1);
+  }
+
+  /* stylelint-disable-next-line order/order */
+  @include mediaScreen($size: m) {
+    &::before {
+      margin-bottom: $cropHeight - nth($topCrop, 2);
+    }
+
+    &::after {
+      margin-top: $cropHeight - nth($bottomCrop, 2);
+    }
+  }
+}

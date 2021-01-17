@@ -1,0 +1,977 @@
+{
+  "title": "This is the title of this blog post and it can be on two lines if you need too!",
+  "date": "2020-04-29T15:50:10.929Z",
+  "thumbnail": "https://source.unsplash.com/jzZMvKChCx4/1280x768",
+  "category": "Design",
+  "author": "Clémence",
+  "intro": "Aujourd’hui, les Product Designer fleurissent sur le web. Les entreprises, les start-ups et les agences recrutent de plus en plus de Product Designer.",
+  "htmlAst": {
+    "type": "root",
+    "children": [
+      {
+        "type": "element",
+        "tagName": "p",
+        "properties": {},
+        "children": [
+          {
+            "type": "text",
+            "value": "Qu’est-ce qu’un Product Designer et pourquoi son rôle au sein d’une entreprise est-il important ? Qui sont les Product Designer, et que font-ils ? Réponses dans cet article !",
+            "position": {
+              "start": {
+                "line": 1,
+                "column": 1,
+                "offset": 0
+              },
+              "end": {
+                "line": 1,
+                "column": 175,
+                "offset": 174
+              }
+            }
+          }
+        ],
+        "position": {
+          "start": {
+            "line": 1,
+            "column": 1,
+            "offset": 0
+          },
+          "end": {
+            "line": 1,
+            "column": 175,
+            "offset": 174
+          }
+        }
+      },
+      {
+        "type": "text",
+        "value": "\n"
+      },
+      {
+        "type": "element",
+        "tagName": "p",
+        "properties": {},
+        "children": [
+          {
+            "type": "text",
+            "value": "Cet article s’attache à donner une définition générale de ce qu’est le Product Design sans pour autant être une description exhaustive de toutes les choses qu’un Product Designer fait ou ne fait pas.",
+            "position": {
+              "start": {
+                "line": 3,
+                "column": 1,
+                "offset": 176
+              },
+              "end": {
+                "line": 3,
+                "column": 200,
+                "offset": 375
+              }
+            }
+          }
+        ],
+        "position": {
+          "start": {
+            "line": 3,
+            "column": 1,
+            "offset": 176
+          },
+          "end": {
+            "line": 3,
+            "column": 200,
+            "offset": 375
+          }
+        }
+      },
+      {
+        "type": "text",
+        "value": "\n"
+      },
+      {
+        "type": "element",
+        "tagName": "h2",
+        "properties": {},
+        "children": [
+          {
+            "type": "text",
+            "value": "Le product design, qu’est-ce que c’est au juste ?",
+            "position": {
+              "start": {
+                "line": 5,
+                "column": 4,
+                "offset": 380
+              },
+              "end": {
+                "line": 5,
+                "column": 53,
+                "offset": 429
+              }
+            }
+          }
+        ],
+        "position": {
+          "start": {
+            "line": 5,
+            "column": 1,
+            "offset": 377
+          },
+          "end": {
+            "line": 5,
+            "column": 53,
+            "offset": 429
+          }
+        }
+      },
+      {
+        "type": "text",
+        "value": "\n"
+      },
+      {
+        "type": "element",
+        "tagName": "h3",
+        "properties": {},
+        "children": [
+          {
+            "type": "text",
+            "value": "Design VS Art",
+            "position": {
+              "start": {
+                "line": 7,
+                "column": 5,
+                "offset": 435
+              },
+              "end": {
+                "line": 7,
+                "column": 18,
+                "offset": 448
+              }
+            }
+          }
+        ],
+        "position": {
+          "start": {
+            "line": 7,
+            "column": 1,
+            "offset": 431
+          },
+          "end": {
+            "line": 7,
+            "column": 18,
+            "offset": 448
+          }
+        }
+      },
+      {
+        "type": "text",
+        "value": "\n"
+      },
+      {
+        "type": "element",
+        "tagName": "p",
+        "properties": {},
+        "children": [
+          {
+            "type": "text",
+            "value": "De manière générale, le mot “design” est souvent associé à l’esthétique des objets alors qu’il est avant-tout question de problèmes, et surtout comment les résoudre. La différence principale entre l’Art et le Design est que l’Art pose les questions tandis que le Design y répond. Autrement dit, le Design répond à un besoin. L’Art ne comble aucun besoin, si ce n’est son propre besoin personnel d’exister et de défier le point de vue du spectateur.",
+            "position": {
+              "start": {
+                "line": 9,
+                "column": 1,
+                "offset": 450
+              },
+              "end": {
+                "line": 9,
+                "column": 449,
+                "offset": 898
+              }
+            }
+          }
+        ],
+        "position": {
+          "start": {
+            "line": 9,
+            "column": 1,
+            "offset": 450
+          },
+          "end": {
+            "line": 9,
+            "column": 449,
+            "offset": 898
+          }
+        }
+      },
+      {
+        "type": "text",
+        "value": "\n"
+      },
+      {
+        "type": "element",
+        "tagName": "blockquote",
+        "properties": {},
+        "children": [
+          {
+            "type": "text",
+            "value": "\n"
+          },
+          {
+            "type": "element",
+            "tagName": "p",
+            "properties": {},
+            "children": [
+              {
+                "type": "text",
+                "value": "Design is not just what it looks and feels like. Design is how it works.",
+                "position": {
+                  "start": {
+                    "line": 11,
+                    "column": 3,
+                    "offset": 902
+                  },
+                  "end": {
+                    "line": 11,
+                    "column": 75,
+                    "offset": 974
+                  }
+                }
+              }
+            ],
+            "position": {
+              "start": {
+                "line": 11,
+                "column": 3,
+                "offset": 902
+              },
+              "end": {
+                "line": 11,
+                "column": 75,
+                "offset": 974
+              }
+            }
+          },
+          {
+            "type": "text",
+            "value": "\n"
+          }
+        ],
+        "position": {
+          "start": {
+            "line": 11,
+            "column": 1,
+            "offset": 900
+          },
+          "end": {
+            "line": 11,
+            "column": 75,
+            "offset": 974
+          }
+        }
+      },
+      {
+        "type": "text",
+        "value": "\n"
+      },
+      {
+        "type": "element",
+        "tagName": "h3",
+        "properties": {},
+        "children": [
+          {
+            "type": "text",
+            "value": "Product design VS Design de produit",
+            "position": {
+              "start": {
+                "line": 15,
+                "column": 5,
+                "offset": 982
+              },
+              "end": {
+                "line": 15,
+                "column": 40,
+                "offset": 1017
+              }
+            }
+          }
+        ],
+        "position": {
+          "start": {
+            "line": 15,
+            "column": 1,
+            "offset": 978
+          },
+          "end": {
+            "line": 15,
+            "column": 40,
+            "offset": 1017
+          }
+        }
+      },
+      {
+        "type": "text",
+        "value": "\n"
+      },
+      {
+        "type": "element",
+        "tagName": "p",
+        "properties": {},
+        "children": [
+          {
+            "type": "text",
+            "value": "À cause de cette mauvaise interprétation, le Product Design est souvent confondu avec le Design de Produit.",
+            "position": {
+              "start": {
+                "line": 17,
+                "column": 1,
+                "offset": 1019
+              },
+              "end": {
+                "line": 17,
+                "column": 108,
+                "offset": 1126
+              }
+            }
+          }
+        ],
+        "position": {
+          "start": {
+            "line": 17,
+            "column": 1,
+            "offset": 1019
+          },
+          "end": {
+            "line": 17,
+            "column": 108,
+            "offset": 1126
+          }
+        }
+      },
+      {
+        "type": "text",
+        "value": "\n"
+      },
+      {
+        "type": "element",
+        "tagName": "p",
+        "properties": {},
+        "children": [
+          {
+            "type": "text",
+            "value": "Les Designers de Produit travaillent la plupart du temps sur des projets électroniques tel que la conception d’une voiture, d’un sèche-cheveux ou bien d’une machine à café. Du coup, quand on parle de Product Design, on est souvent loin de penser au digital, a priori.",
+            "position": {
+              "start": {
+                "line": 19,
+                "column": 1,
+                "offset": 1128
+              },
+              "end": {
+                "line": 19,
+                "column": 268,
+                "offset": 1395
+              }
+            }
+          }
+        ],
+        "position": {
+          "start": {
+            "line": 19,
+            "column": 1,
+            "offset": 1128
+          },
+          "end": {
+            "line": 19,
+            "column": 268,
+            "offset": 1395
+          }
+        }
+      },
+      {
+        "type": "text",
+        "value": "\n"
+      },
+      {
+        "type": "element",
+        "tagName": "p",
+        "properties": {},
+        "children": [
+          {
+            "type": "text",
+            "value": "En réalité, le Product Design est une méthodologie pour concevoir un produit (digital ou non), du début à la fin. Le paradigme est large puisque le Product Design englobe la stratégie, la recherche de marché, l’identification de problèmes, la conception de solutions, le design, le développement et les résultats tout au long de son cycle de vie.",
+            "position": {
+              "start": {
+                "line": 21,
+                "column": 1,
+                "offset": 1397
+              },
+              "end": {
+                "line": 21,
+                "column": 347,
+                "offset": 1743
+              }
+            }
+          }
+        ],
+        "position": {
+          "start": {
+            "line": 21,
+            "column": 1,
+            "offset": 1397
+          },
+          "end": {
+            "line": 21,
+            "column": 347,
+            "offset": 1743
+          }
+        }
+      },
+      {
+        "type": "text",
+        "value": "\n"
+      },
+      {
+        "type": "element",
+        "tagName": "p",
+        "properties": {},
+        "children": [
+          {
+            "type": "element",
+            "tagName": "img",
+            "properties": {
+              "src": "https://source.unsplash.com/jzZMvKChCx4/1280x768",
+              "alt": "Image"
+            },
+            "children": [],
+            "position": {
+              "start": {
+                "line": 23,
+                "column": 1,
+                "offset": 1745
+              },
+              "end": {
+                "line": 23,
+                "column": 59,
+                "offset": 1803
+              }
+            }
+          }
+        ],
+        "position": {
+          "start": {
+            "line": 23,
+            "column": 1,
+            "offset": 1745
+          },
+          "end": {
+            "line": 23,
+            "column": 59,
+            "offset": 1803
+          }
+        }
+      },
+      {
+        "type": "text",
+        "value": "\n"
+      },
+      {
+        "type": "element",
+        "tagName": "h2",
+        "properties": {},
+        "children": [
+          {
+            "type": "text",
+            "value": "Le profil type du Product Designer",
+            "position": {
+              "start": {
+                "line": 25,
+                "column": 4,
+                "offset": 1808
+              },
+              "end": {
+                "line": 25,
+                "column": 38,
+                "offset": 1842
+              }
+            }
+          }
+        ],
+        "position": {
+          "start": {
+            "line": 25,
+            "column": 1,
+            "offset": 1805
+          },
+          "end": {
+            "line": 25,
+            "column": 38,
+            "offset": 1842
+          }
+        }
+      },
+      {
+        "type": "text",
+        "value": "\n"
+      },
+      {
+        "type": "element",
+        "tagName": "h3",
+        "properties": {},
+        "children": [
+          {
+            "type": "text",
+            "value": "Product Design VS UX Designer",
+            "position": {
+              "start": {
+                "line": 27,
+                "column": 5,
+                "offset": 1848
+              },
+              "end": {
+                "line": 27,
+                "column": 34,
+                "offset": 1877
+              }
+            }
+          }
+        ],
+        "position": {
+          "start": {
+            "line": 27,
+            "column": 1,
+            "offset": 1844
+          },
+          "end": {
+            "line": 27,
+            "column": 34,
+            "offset": 1877
+          }
+        }
+      },
+      {
+        "type": "text",
+        "value": "\n"
+      },
+      {
+        "type": "element",
+        "tagName": "p",
+        "properties": {},
+        "children": [
+          {
+            "type": "text",
+            "value": "De manière générale, le mot ‘ design ‘ est souvent associé à l’esthétique des objets alors qu’il est avant-tout question de problèmes, et surtout comment les résoudre. La différence principale entre l’Art et le Design est que l’Art pose les questions tandis que le Design y répond. Autrement dit, le Design répond à un besoin. L’Art ne comble aucun besoin, si ce n’est son propre besoin personnel d’exister et de défier le point de vue du spectateur.",
+            "position": {
+              "start": {
+                "line": 29,
+                "column": 1,
+                "offset": 1879
+              },
+              "end": {
+                "line": 29,
+                "column": 451,
+                "offset": 2329
+              }
+            }
+          }
+        ],
+        "position": {
+          "start": {
+            "line": 29,
+            "column": 1,
+            "offset": 1879
+          },
+          "end": {
+            "line": 29,
+            "column": 451,
+            "offset": 2329
+          }
+        }
+      },
+      {
+        "type": "text",
+        "value": "\n"
+      },
+      {
+        "type": "element",
+        "tagName": "ul",
+        "properties": {},
+        "children": [
+          {
+            "type": "text",
+            "value": "\n"
+          },
+          {
+            "type": "element",
+            "tagName": "li",
+            "properties": {},
+            "children": [
+              {
+                "type": "text",
+                "value": "Le Product Design est une discipline qui inclut toutes les autres. UI, UX, mais aussi management de projet, marketing, communication et aussi un peu de développement.",
+                "position": {
+                  "start": {
+                    "line": 31,
+                    "column": 3,
+                    "offset": 2333
+                  },
+                  "end": {
+                    "line": 31,
+                    "column": 169,
+                    "offset": 2499
+                  }
+                }
+              }
+            ],
+            "position": {
+              "start": {
+                "line": 31,
+                "column": 1,
+                "offset": 2331
+              },
+              "end": {
+                "line": 31,
+                "column": 169,
+                "offset": 2499
+              }
+            }
+          },
+          {
+            "type": "text",
+            "value": "\n"
+          },
+          {
+            "type": "element",
+            "tagName": "li",
+            "properties": {},
+            "children": [
+              {
+                "type": "text",
+                "value": "Un product Designer a une vision globale du produit. À la différence d’un simple UX Designer, le Product Designer adapte une démarche de stratégie globale et son travail a un impact non seulement sur les utilisateurs, mais aussi sur les taux de conversions et les KPIs de l’entreprise. Cela veut donc dire que le Product Designer doit aussi prendre en compte les objectifs de l’entreprise, le budget et participer à la gestion du planning.",
+                "position": {
+                  "start": {
+                    "line": 32,
+                    "column": 3,
+                    "offset": 2502
+                  },
+                  "end": {
+                    "line": 32,
+                    "column": 442,
+                    "offset": 2941
+                  }
+                }
+              }
+            ],
+            "position": {
+              "start": {
+                "line": 32,
+                "column": 1,
+                "offset": 2500
+              },
+              "end": {
+                "line": 32,
+                "column": 442,
+                "offset": 2941
+              }
+            }
+          },
+          {
+            "type": "text",
+            "value": "\n"
+          },
+          {
+            "type": "element",
+            "tagName": "li",
+            "properties": {},
+            "children": [
+              {
+                "type": "text",
+                "value": "Contrairement aux UX Designers, les Product Designers sont très souvent directement intégrés dans le process agile. Ils travaillent en sprint, en parallèle des développeurs et adoptent aussi une démarche très opérationnelle. C’est d’ailleurs pour cela que les Start-ups sont aujourd’hui très friandes de ce genre de profil pour intégrer leur équipe de développement produit.",
+                "position": {
+                  "start": {
+                    "line": 33,
+                    "column": 3,
+                    "offset": 2944
+                  },
+                  "end": {
+                    "line": 33,
+                    "column": 377,
+                    "offset": 3318
+                  }
+                }
+              }
+            ],
+            "position": {
+              "start": {
+                "line": 33,
+                "column": 1,
+                "offset": 2942
+              },
+              "end": {
+                "line": 33,
+                "column": 377,
+                "offset": 3318
+              }
+            }
+          },
+          {
+            "type": "text",
+            "value": "\n"
+          },
+          {
+            "type": "element",
+            "tagName": "li",
+            "properties": {},
+            "children": [
+              {
+                "type": "text",
+                "value": "L’autre point différenciant concerne la stratégie et la vision produit. En effet, un Product Designer s’intéresse de très près à l’évolution de son produit, ce qui l’oblige à se projeter sur une stratégie moyen et long terme, là où l’UX Designer traite de problématiques plus court-termistes et pas toujours corrélées à la stratégie du produit-même.",
+                "position": {
+                  "start": {
+                    "line": 34,
+                    "column": 3,
+                    "offset": 3321
+                  },
+                  "end": {
+                    "line": 34,
+                    "column": 352,
+                    "offset": 3670
+                  }
+                }
+              }
+            ],
+            "position": {
+              "start": {
+                "line": 34,
+                "column": 1,
+                "offset": 3319
+              },
+              "end": {
+                "line": 34,
+                "column": 352,
+                "offset": 3670
+              }
+            }
+          },
+          {
+            "type": "text",
+            "value": "\n"
+          }
+        ],
+        "position": {
+          "start": {
+            "line": 31,
+            "column": 1,
+            "offset": 2331
+          },
+          "end": {
+            "line": 34,
+            "column": 352,
+            "offset": 3670
+          }
+        }
+      },
+      {
+        "type": "text",
+        "value": "\n"
+      },
+      {
+        "type": "element",
+        "tagName": "p",
+        "properties": {},
+        "children": [
+          {
+            "type": "text",
+            "value": "Le Product Design consiste à identifier une opportunité de marché, définir un besoin, identifier un problème et développer une solution appropriée, qui est ensuite validée directement auprès d’utilisateurs afin d’être continuellement améliorée. Le Product Designer apparaît donc comme un élément clé du processus de conception et il se doit d’avoir une vision globale du produit.",
+            "position": {
+              "start": {
+                "line": 36,
+                "column": 1,
+                "offset": 3672
+              },
+              "end": {
+                "line": 36,
+                "column": 380,
+                "offset": 4051
+              }
+            }
+          }
+        ],
+        "position": {
+          "start": {
+            "line": 36,
+            "column": 1,
+            "offset": 3672
+          },
+          "end": {
+            "line": 36,
+            "column": 380,
+            "offset": 4051
+          }
+        }
+      },
+      {
+        "type": "text",
+        "value": "\n"
+      },
+      {
+        "type": "element",
+        "tagName": "p",
+        "properties": {},
+        "children": [
+          {
+            "type": "text",
+            "value": "Autrefois considéré comme peu expérimenté, cette notion de “mulet-casquette” fait la force et la singularité des Product Designer. Fini les designers sortant tous des mêmes écoles et ayant étudié tous les mêmes choses. Aujourd’hui, le Product Designer forge son chemin à la force de sa curiosité, de son talent et de sa capacité à continuellement apprendre de nouvelles choses !",
+            "position": {
+              "start": {
+                "line": 38,
+                "column": 1,
+                "offset": 4053
+              },
+              "end": {
+                "line": 38,
+                "column": 379,
+                "offset": 4431
+              }
+            }
+          }
+        ],
+        "position": {
+          "start": {
+            "line": 38,
+            "column": 1,
+            "offset": 4053
+          },
+          "end": {
+            "line": 38,
+            "column": 379,
+            "offset": 4431
+          }
+        }
+      },
+      {
+        "type": "text",
+        "value": "\n"
+      },
+      {
+        "type": "element",
+        "tagName": "p",
+        "properties": {},
+        "children": [
+          {
+            "type": "text",
+            "value": "Personnellement, le Product Design est une discipline qui m’intéresse beaucoup, car j’aime avoir cette vision et compréhension globale d’un produit. À l’époque, cela ne s’appelait pas comme ça, mais c’est finalement ce que ma formation Gobelins nous a appris pendant deux années.\nPour autant, je ne pense pas que ce genre de position soit faite pour tout le monde et je trouve aussi intéressant d’être très spécialiste dans une discipline particulière comme le Design d’Interaction ou bien les UX researchers, le principal restant d’être passionné par ce que l’on fait !",
+            "position": {
+              "start": {
+                "line": 40,
+                "column": 1,
+                "offset": 4433
+              },
+              "end": {
+                "line": 41,
+                "column": 291,
+                "offset": 5003
+              }
+            }
+          }
+        ],
+        "position": {
+          "start": {
+            "line": 40,
+            "column": 1,
+            "offset": 4433
+          },
+          "end": {
+            "line": 41,
+            "column": 291,
+            "offset": 5003
+          }
+        }
+      },
+      {
+        "type": "text",
+        "value": "\n"
+      },
+      {
+        "type": "element",
+        "tagName": "p",
+        "properties": {},
+        "children": [
+          {
+            "type": "text",
+            "value": "Aussi, je pense que le Product Designer est une personne compétente, avec déjà plusieurs années d’expériences, car c’est justement son expérience qui lui permet de comprendre mieux un produit, d’avoir une vision et d’apporter une réelle valeur ajoutée dans une équipe projet.",
+            "position": {
+              "start": {
+                "line": 43,
+                "column": 1,
+                "offset": 5005
+              },
+              "end": {
+                "line": 43,
+                "column": 276,
+                "offset": 5280
+              }
+            }
+          }
+        ],
+        "position": {
+          "start": {
+            "line": 43,
+            "column": 1,
+            "offset": 5005
+          },
+          "end": {
+            "line": 43,
+            "column": 276,
+            "offset": 5280
+          }
+        }
+      },
+      {
+        "type": "text",
+        "value": "\n"
+      },
+      {
+        "type": "element",
+        "tagName": "p",
+        "properties": {},
+        "children": [
+          {
+            "type": "text",
+            "value": "Enfin, peu importe le nom que vous avez — UX Designer, UI Designer, UX Research, Product Designer, Architecte de l’information — N’oublions pas que la collaboration est clé dans la réussite d’un produit et de l’expérience utilisateur qui en résulte.",
+            "position": {
+              "start": {
+                "line": 45,
+                "column": 1,
+                "offset": 5282
+              },
+              "end": {
+                "line": 45,
+                "column": 250,
+                "offset": 5531
+              }
+            }
+          }
+        ],
+        "position": {
+          "start": {
+            "line": 45,
+            "column": 1,
+            "offset": 5282
+          },
+          "end": {
+            "line": 45,
+            "column": 250,
+            "offset": 5531
+          }
+        }
+      }
+    ],
+    "position": {
+      "start": {
+        "line": 1,
+        "column": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 45,
+        "column": 250,
+        "offset": 5531
+      }
+    }
+  }
+}

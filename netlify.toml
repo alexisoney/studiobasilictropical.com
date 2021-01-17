@@ -1,0 +1,20 @@
+[[redirects]]
+from = "/newsletter"
+to = "https://mailchi.mp/f50ed25a39ba/basic"
+status = 200
+
+[[redirects]]
+from = "/youtube"
+to = "https://www.youtube.com/channel/UCu8AVkbZzBqAwKugfA8IygA"
+
+[[redirects]]
+from = "/linkedin/alexis-oney"
+to = "https://www.linkedin.com/in/alexis-oney/"
+
+[[redirects]]
+from = "/instagram/alexis-oney"
+to = "https://www.instagram.com/alexisoney_fr/"
+
+[[redirects]]
+from = "/twitter/alexis-oney"
+to = "https://twitter.com/alexis_oney"
